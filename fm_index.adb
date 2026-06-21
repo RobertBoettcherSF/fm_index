@@ -1,5 +1,5 @@
 -- FM_Index Implementation
--- Version: 0.03
+-- Version: 0.04
 -- Date: 2024-06-21
 -- Description: FM-Index backward search algorithm implementation
 
