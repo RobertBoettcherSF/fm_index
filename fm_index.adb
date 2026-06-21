@@ -1,3 +1,8 @@
+-- FM_Index Implementation
+-- Version: 0.01
+-- Date: 2024-06-21
+-- Description: FM-Index backward search algorithm implementation
+
 package body FM_Index with SPARK_Mode is
 
    function Get_Rows (Pattern : Pattern_String;

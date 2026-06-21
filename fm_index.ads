@@ -1,3 +1,8 @@
+-- FM_Index Specification
+-- Version: 0.01
+-- Date: 2024-06-21
+-- Description: FM-Index data structures and types for SPARK verification
+
 package FM_Index with SPARK_Mode is
 
    -- Bounded text size for static SPARK verification

@@ -1,5 +1,10 @@
+-- FM_Index Project File
+-- Version: 0.01
+-- Date: 2024-06-21
+-- Description: SPARK Ada project for FM-Index implementation
+
 project FM_Index is
-   for Source_Dirs use ("src");
+   for Source_Dirs use (".");
    for Object_Dir use "obj";
    
    package Compiler is
