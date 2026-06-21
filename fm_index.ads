@@ -1,5 +1,5 @@
 -- FM_Index Specification
--- Version: 0.01
+-- Version: 0.02
 -- Date: 2024-06-21
 -- Description: FM-Index data structures and types for SPARK verification
 
@@ -32,6 +32,9 @@ package FM_Index with SPARK_Mode is
    function Get_Rows (Pattern : Pattern_String;
                       C       : C_Array;
                       Occ     : Occ_Array) return Search_Result
-     with Pre => Pattern'Length > 0 and then Pattern'First = 1;
+     with Pre => Pattern'Length > 0 and then Pattern'First = 1
+           and then (for all Ch in Text_Character => C(Ch) <= Max_Text_Size)
+           and then (for all Ch in Text_Character, Pos in Index_Range => 
+                      Occ(Ch, Pos) <= Max_Text_Size - C(Ch));
 
 end FM_Index;

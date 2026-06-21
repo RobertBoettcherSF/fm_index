@@ -1,5 +1,5 @@
 -- FM_Index Implementation
--- Version: 0.01
+-- Version: 0.02
 -- Date: 2024-06-21
 -- Description: FM-Index backward search algorithm implementation
 
@@ -28,7 +28,11 @@ package body FM_Index with SPARK_Mode is
       
       -- Step 2: Backward traversal loop
       while First <= Last and then I >= 2 loop
-         pragma Loop_Invariant (I >= 1 and then I <= Pattern'Last);
+         pragma Loop_Invariant (I >= 1 and then I <= Pattern'Last
+                                and then First >= 1
+                                and then Last <= Max_Text_Size
+                                and then First <= Last + 1);
+         pragma Loop_Variant (Decreases => I);
          
          -- Step 3: Move to the preceding character
          I := I - 1;
